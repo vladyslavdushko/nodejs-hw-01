@@ -7,9 +7,6 @@ export const addOneContact = async () => {
   try {
     const fileData = await fs.readFile(PATH_DB, 'utf-8');
     const contacts = JSON.parse(fileData);
-    console.log(contacts, 'contacts');
-    console.log(fileData, 'fileData');
-
     contacts.push(createFakeContact());
     writeContacts(contacts);
   } catch (error) {
